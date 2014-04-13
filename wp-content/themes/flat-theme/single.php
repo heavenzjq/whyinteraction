@@ -1,9 +1,9 @@
 <?php
 get_header();
 $col= 'col-md-12';
-if ( is_active_sidebar( 'sidebar' ) ) {
-    $col = 'col-md-8';
-}
+// if ( is_active_sidebar( 'sidebar' ) ) {
+//     $col = 'col-md-8';
+// }
 ?>
 <div class="row">
     <div id="content" class="site-content <?php echo $col; ?>" role="main">
@@ -14,6 +14,6 @@ if ( is_active_sidebar( 'sidebar' ) ) {
         <?php blog_comments(); ?>
         <?php } } ?>
     </div><!--/#content -->
-    <?php get_sidebar(); ?>
+    <!--<?php get_sidebar(); ?>-->
 </div>
 <?php get_footer();
