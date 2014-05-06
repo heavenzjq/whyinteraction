@@ -280,7 +280,7 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
  <div id="portfolio" class="clearfix">
 
   <ul class="portfolio-filter">
-    <li><a class="btn btn-default active" href="#" data-filter="*"><?php _e('All', ZEETEXTDOMAIN); ?></a></li>
+    <li><a class="nbt btn-default active" href="#" data-filter="*"><?php _e('All', ZEETEXTDOMAIN); ?></a></li>
     <?php 
     $terms = get_terms('cat_portfolio', array('hide_empty'=> true));
     foreach ($terms as $term) {
@@ -309,13 +309,13 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
           )); 
           ?> 
           <a href="<?php echo get_permalink( $value->ID ); ?>"><h5><?php echo $value->post_title; ?></h5></a>
-          <!--<div class="overlay">
-            <?php 
+          <div class="overlay">
+            <!--<?php 
             $full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
             $img_src= $full_img[0];
-            ?>
-            <a class="preview btn btn-danger" href="<?php echo get_permalink( $value->ID ); ?>" rel="prettyPhoto"><i class="icon-eye-open"></i></a>              
-          </div>    -->       
+            ?>-->
+            <a class="preview btn btn-danger" href="<?php echo get_permalink( $value->ID ); ?>" ><i class="icon-eye-open"></i></a>              
+          </div>        
         </div>
       </li>
       <?php } ?>
