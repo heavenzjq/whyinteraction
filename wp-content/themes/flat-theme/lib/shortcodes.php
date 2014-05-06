@@ -280,7 +280,7 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
  <div id="portfolio" class="clearfix">
 
   <ul class="portfolio-filter">
-    <li><a class="nbt btn-default active" href="#" data-filter="*"><?php _e('All', ZEETEXTDOMAIN); ?></a></li>
+    <li><a class="btn btn-default active" href="#" data-filter="*"><?php _e('All', ZEETEXTDOMAIN); ?></a></li>
     <?php 
     $terms = get_terms('cat_portfolio', array('hide_empty'=> true));
     foreach ($terms as $term) {
