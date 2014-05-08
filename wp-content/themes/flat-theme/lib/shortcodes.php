@@ -782,7 +782,7 @@ add_shortcode( 'zee_recent_works', function( $atts, $content= null ){
         </div>
       </div><!--/.col-md-9-->
       <?php
-    }
+    } 
 
     return ob_get_clean();
   });
