@@ -291,7 +291,9 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
     ?>
   </ul>
 
-  <ul class="portfolio-items col-<?php echo $column; ?>">
+  <!-- <ul class="portfolio-items col-<?php echo $column; ?>"> -->
+
+  <ul class="portfolio-items">
     <?php foreach ($portfolios as $key => $value) { ?>
     <?php 
     $terms = wp_get_post_terms( $value->ID, 'cat_portfolio' );
@@ -309,13 +311,13 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
           )); 
           ?> 
           <a href="<?php echo get_permalink( $value->ID ); ?>"><h5><?php echo $value->post_title; ?></h5></a>
-          <!--<div class="overlay">
+          <!-- <div class="overlay">
             <?php 
             $full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
             $img_src= $full_img[0];
             ?>
             <a class="preview btn btn-danger" href="<?php echo get_permalink( $value->ID ); ?>" rel="prettyPhoto"><i class="icon-eye-open"></i></a>              
-          </div>    -->       
+          </div>   -->     
         </div>
       </li>
       <?php } ?>
@@ -759,7 +761,7 @@ add_shortcode( 'zee_recent_works', function( $atts, $content= null ){
                         $full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
                         $img_src= $full_img[0];
                         ?>
-                        <!--<a class="preview btn btn-danger" title="<?php echo $value->post_title; ?>" href="<?php echo $img_src; ?>" rel="prettyPhoto"><i class="icon-eye-open"></i></a> -->  
+                        <a class="preview btn btn-danger" title="<?php echo $value->post_title; ?>" href="<?php echo $img_src; ?>" rel="prettyPhoto"><i class="icon-eye-open"></i></a>   
                       </div>
                     </div><!--.item-inner-->
                     </div><!--.portfolio-item-->

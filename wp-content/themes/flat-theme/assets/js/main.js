@@ -24,8 +24,11 @@ jQuery(function($) {
 			$portfolio = $('.portfolio-items');
 			$portfolio.isotope({
 				itemSelector : 'li',
-				layoutMode : 'fitRows'
+				// masonry: {columnWidth: 150},
+				position: 'relative',
+				layoutMode : 'masonry' //fitRows
 			});
+
 			$portfolio_selectors.on('click', function(){
 				$portfolio_selectors.removeClass('active');
 				$(this).addClass('active');
