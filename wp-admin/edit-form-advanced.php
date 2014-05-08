@@ -173,7 +173,7 @@ if ( 'attachment' === $post_type && ! empty( $post->post_mime_type ) ) {
 if ( $theme_support || $audio_post_support || $video_post_support )
 	add_meta_box('postimagediv', __('Featured Image'), 'post_thumbnail_meta_box', null, 'side', 'low');
 
-if ( post_type_supports($post_type, 'excerpt') )
+//if ( post_type_supports($post_type, 'excerpt') )
 	add_meta_box('postexcerpt', __('Excerpt'), 'post_excerpt_meta_box', null, 'normal', 'core');
 
 if ( post_type_supports($post_type, 'trackbacks') )

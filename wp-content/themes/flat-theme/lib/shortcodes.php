@@ -309,6 +309,7 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
           )); 
           ?> 
           <a href="<?php echo get_permalink( $value->ID ); ?>"><h5><?php echo $value->post_title; ?></h5></a>
+          <p> <?php echo $value->post_excerpt; ?>  </p>
           <div class="overlay">
             <!--<?php 
             $full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
