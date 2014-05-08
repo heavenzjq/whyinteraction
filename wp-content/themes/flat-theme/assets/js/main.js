@@ -24,7 +24,11 @@ jQuery(function($) {
 			$portfolio = $('.portfolio-items');
 			$portfolio.isotope({
 				itemSelector : 'li',
-				layoutMode : 'fitRows'
+				layoutMode: 'masonry',
+        		resizable: false,
+				masonry: {
+		            columnWidth: 'li'
+		        }
 			});
 			$portfolio_selectors.on('click', function(){
 				$portfolio_selectors.removeClass('active');
@@ -58,4 +62,9 @@ jQuery(function($) {
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
 	});	
+
+	jQuery(window).resize(function(){
+        $('.portfolio-items').isotope('reLayout');
+    });
+
 });

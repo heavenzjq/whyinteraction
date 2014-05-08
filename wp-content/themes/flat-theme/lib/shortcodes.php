@@ -262,7 +262,7 @@ add_shortcode( 'zee_testimonial', function( $atts, $content= null ){
 add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
  $atts = shortcode_atts(
   array(
-    'column' => '3'
+    'column' => '4'
     ), $atts);
 
  extract($atts);
@@ -291,7 +291,7 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
     ?>
   </ul>
 
-  <ul class="portfolio-items col-<?php echo $column; ?>">
+  <ul class="portfolio-items ">
     <?php foreach ($portfolios as $key => $value) { ?>
     <?php 
     $terms = wp_get_post_terms( $value->ID, 'cat_portfolio' );
@@ -299,7 +299,7 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
     foreach ($terms as $term) $new_terms[] = $term->slug;
     $slugs = implode(' ', $new_terms);
     ?>
-    <li class="portfolio-item <?php echo $slugs; ?>">
+    <li class="portfolio-item <?php echo $slugs; ?> col-lg-4 col-md-6 col-xs-12">
       <div class="item-inner">
         <?php 
         echo get_the_post_thumbnail( $value->ID, array(300,300), array( 
