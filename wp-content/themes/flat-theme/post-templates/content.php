@@ -8,10 +8,10 @@
         <?php } //.entry-thumbnail ?> -->
 
         <?php if ( is_single() ) { ?>
-        <!-- <h1 class="entry-title">
+        <h1 class="entry-title">
             <?php the_title(); ?>
             <?php edit_post_link( __( 'Edit', ZEETEXTDOMAIN ), '<small class="edit-link pull-right">', '</small>' ); ?>
-        </h1> -->
+        </h1>
         <?php } else { ?>
         <h2 class="entry-title">
             <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
