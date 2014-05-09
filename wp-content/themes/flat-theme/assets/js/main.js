@@ -25,7 +25,7 @@ jQuery(function($) {
 			$portfolio.isotope({
 				itemSelector : 'li',
 				layoutMode: 'masonry',
-        		resizable: false,
+        		resizable: true,
 				masonry: {
 		            columnWidth: 'li'
 		        }

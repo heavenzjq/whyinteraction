@@ -299,7 +299,7 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
     foreach ($terms as $term) $new_terms[] = $term->slug;
     $slugs = implode(' ', $new_terms);
     ?>
-    <li class="portfolio-item <?php echo $slugs; ?> col-lg-4 col-md-6 col-xs-12">
+    <li class="portfolio-item <?php echo $slugs; ?> col-lg-3 col-md-4 col-sm-6 col-xs-12">
       <div class="item-inner">
         <?php 
         echo get_the_post_thumbnail( $value->ID, array(300,300), array( 
