@@ -71,7 +71,7 @@ img.AlpinePhotoTiles-img-nocorners{
 .AlpinePhotoTiles-row{
   max-width:100%;
   position:relative;
-  padding: 0 0 4px 0;
+  padding: 0 0 0 0;
   clear:both;
   display:block;
   height:auto;
@@ -81,7 +81,7 @@ img.AlpinePhotoTiles-img-nocorners{
   background-size:cover;
   background-repeat:no-repeat;
   background-position:center;
-  margin:0 0 0 4px;
+  margin:0 0 0 0;
   float:left;
 }
 .AlpinePhotoTiles-half-tile{
@@ -147,7 +147,8 @@ img.AlpinePhotoTiles-img-nocorners{
   padding:5px;
 }
 .AlpinePhotoTiles-highlight-div{
-  padding:2px;
+  padding-right: -15px;
+  padding-left: -15px;
 }
 
 

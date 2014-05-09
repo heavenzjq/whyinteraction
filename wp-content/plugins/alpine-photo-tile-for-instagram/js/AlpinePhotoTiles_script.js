@@ -177,9 +177,9 @@
               theWidth = (normalWidth-4-4/options.perRow);
               addDiv(j);
               
-              newDivContainer.css({
-                'left':pos+'px'
-              });
+              // newDivContainer.css({
+              //   'left':pos+'px'
+              // });
               
               pos += normalWidth;
             });
@@ -316,7 +316,7 @@
         var originalImages = s('img.AlpinePhotoTiles-original-image',parent);
         
         var gallery,galleryContainer,galleryHeight;
-        theWidth = (width/options.perRow-4-4/options.perRow);
+        theWidth = (width/options.perRow/options.perRow);
         theHeight = (width/options.perRow);
              
         s.each(images, function(i){
@@ -423,7 +423,7 @@
           
         }else{
           currentRow = s('<div class="AlpinePhotoTiles-row"></div>');
-          currentRow.css({'height':height+'px'});
+          //currentRow.css({'height':height+'px'});
           parent.append(currentRow);
         }  
       }
@@ -474,13 +474,13 @@
         if(!s.support.leadingWhitespace && !d.querySelector){
           newDivContainer.css({
             "height":(theHeight*0.99)+"px",
-            "width":(theWidth)+"px",
+            //"width":(theWidth)+"px",
             "overflow":"hidden"
           });
         }else{
           newDivContainer.css({
             "height":theHeight+"px",
-            "width":theWidth+"px"
+            //"width":theWidth+"px"
           });
         }
         
@@ -506,8 +506,12 @@
         if(options.imageHighlight){
           if(!options.imageBorder){
             newDivContainer.addClass('AlpinePhotoTiles-highlight-div');
-            newDivContainer.width( newDivContainer.width()-4 );
-            newDivContainer.height( newDivContainer.height()-4 );
+             newDivContainer.addClass('col-lg-2');
+             newDivContainer.addClass('col-md-3');
+             newDivContainer.addClass('col-sm-4');
+             newDivContainer.addClass('col-xs-6');
+            //newDivContainer.width( newDivContainer.width() * 0.9999);
+            newDivContainer.height( newDivContainer.height());
           }
           newDivContainer.hover(function(){
             s(this).css({
