@@ -28,7 +28,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <?php logo();?>
+        <!--<?php logo();?>-->
       </div>
 
       <div class="hidden-xs">

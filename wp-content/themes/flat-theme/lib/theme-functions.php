@@ -198,7 +198,7 @@ if( zee_option('zee_link_color') ){
 <?php  
 if( zee_option('zee_header_background') ){  
     // echo  'background-color: ' . zee_option('zee_header_background') . ';';
-    echo  'background-color: 000000;';
+    echo  'background-color: rgba(255,255,255,0.97);';
 }
 ?>
 }  

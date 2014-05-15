@@ -1818,7 +1818,14 @@ ul#menu-company-menu li:before{
   margin-right: 10px;
   margin-left: 10px;
 }
-
+@media (min-width: 1200px) {
+  .col-lg-1210, {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-: 0px;
+    width: 10%;
+  }
 
 /* Featurettes
 ------------------------- */
