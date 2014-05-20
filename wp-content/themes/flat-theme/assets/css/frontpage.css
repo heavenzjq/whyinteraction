@@ -1,0 +1,186 @@
+
+
+
+#wrapper{text-align: center;text-shadow:0 1px 0 #fff;margin:0 auto;}
+.mast{padding:60px 0;}
+.mast img{width:75px;height:auto;margin-bottom: 20px}
+.mast h1{font-size: 48px;font-weight: bold}
+.mast h3{font-size: 18px;color:#666;margin-top:10px;}
+
+section h2{color:#ccc;font-size:24px;font-weight: normal;display:block;background:transparent url(../images/divider.png) center center repeat-x;}
+section h2 span{background:#f1f1f1;display:inline-block;padding:0 10px;}
+
+
+
+#about{overflow: hidden;padding-bottom:10px;}	
+.bio{text-align: left;margin-top: 40px;}
+.bio p{margin-bottom:30px;font-size:18px;line-height: 24px;}
+
+.dribbble_link{color:#ea4c89;}
+.instagram_link{color:#3f729b;}
+.twitter_link{color:#00acee;}
+
+#contact{padding-bottom:40px}
+#contact h3{font-size: 36px;font-weight:bold;margin:40px 0 0 0;}
+#contact p{font-size: 18px;color:#666;margin-top:10px;}
+
+#contact .icons{margin:40px auto 0 auto;font-size: 68px;overflow:hidden;}
+#contact .icons li{float:left;width:20%;}
+#contact a{cursor: pointer;margin:0;text-shadow:none;width:100px;height:100px;border-radius:50%;display:inline-block;color:#999;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    -ms-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out;
+}
+#contact a i{line-height: 100px}
+
+#contact a.twitter:hover {color:#00acee;}
+#contact a.dribbble:hover {color:#ea4c89;}
+#contact a.instagram:hover {color:#3f729b;}
+#contact a.linkedin:hover {color:#0e76a8;}
+#contact a.email:hover {color:#dd1812;}
+
+footer{background:transparent url(../images/divider.png) center top repeat-x;overflow: hidden;}
+footer a{color:#999;}
+footer p{font-size:14px;color:#999;margin-top:25px;}
+
+
+.md-modal{text-align: center}
+.md-modal h3{font-size: 36px}
+.md-modal p{font-weight: normal;color: rgba(255,255,255,0.8);}
+.md-modal span{display: inline-block;padding:10px 20px;background:#ecf0f1;color:#34495e;margin:0;cursor:pointer;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow:0 3px 0 #bdc3c7;
+	-moz-box-shadow:0 3px 0 #bdc3c7;
+	box-shadow:0 3px 0 #bdc3c7;
+}
+.md-modal span:hover{color:#2c3e50;}
+.md-modal span i{color:#00acee;}
+.md-close{display:none;position: fixed;top:20px;left:20px;font-size: 32px;color:rgba(255,255,255,0.8);z-index: 9999;-webkit-transition:all .2s ease-in-out;cursor:pointer;}
+.md-close:hover{color:rgba(255,255,255,1.0);}
+.chromeDownloadButton, .nesDownloadButton, .boxDownloadButton, .envelopeDownloadButton{display:none;}
+.chromeFollow, .nesFollow, .boxFollow, .envelopeFollow{visibility:hidden;margin-top:25px;color:rgba(255,255,255,0.8);}
+.chromeFollow iframe, .nesFollow iframe, .boxFollow iframe, .envelopeFollow iframe{position: relative;top:4px;margin-right: 2px;}
+.chromeDownloadButton.active, .nesDownloadButton.active, .boxDownloadButton.active, .envelopeDownloadButton.active{display:block;display: inline-block;padding:10px 20px;background:#2ecc71;color:#fff;margin:0;cursor:pointer;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow:0 3px 0 #27ae60;
+	-moz-box-shadow:0 3px 0 #27ae60;
+	box-shadow:0 3px 0 #27ae60;
+}
+
+
+
+/* Singe Page Styles */
+
+#sub_menu ul{overflow: hidden;margin:0;width:100%;}
+#sub_menu li{display: inline-block;text-align: center;width: 33%;}
+#sub_menu .left{float: left;text-align: left;}
+
+#joypad_wrapper{text-align: center;text-shadow:0 1px 0 #fff;padding:56px 0;margin:0 auto;}
+
+.joypad_hero{padding:60px 0;background:#f1f1f1;border-bottom: 1px solid #bbb;height:650px;overflow:hidden;
+background: #ecebeb; /* Old browsers */
+background: -moz-linear-gradient(top, #ecebeb 0%, #c9c8c8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ecebeb), color-stop(100%,#c9c8c8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ecebeb 0%,#c9c8c8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ecebeb 0%,#c9c8c8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ecebeb 0%,#c9c8c8 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ecebeb 0%,#c9c8c8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecebeb', endColorstr='#c9c8c8',GradientType=0 ); /* IE6-9 */
+}
+.joypad_hero img.logo{margin-bottom: 20px;}
+.joypad_hero h1{font-size: 48px;font-weight: bold}
+.joypad_hero h3{font-size: 18px;color:#666;margin-top:10px;}
+.joypad_hero img.hero{max-width: 100%;height:auto;margin-top: 0;}
+
+#joypad_wrapper article{overflow: hidden;}
+#joypad_wrapper section{padding:80px 0;overflow: hidden;}
+#joypad_wrapper .inner{position: relative;width:90%;}
+
+.pic{width:60%;float:left;text-align: center;position: relative;}
+.pic img{max-width:100%;display: block;margin:0 auto;}
+.pic div{padding:0 60px;}
+.pic a{}
+.pic a img{opacity:1;-webkit-transition:all .2s ease-in-out;}
+.pic a:hover img{opacity: 0.9}
+
+.game_console .pic img{border:5px solid #fff;
+    -moz-box-shadow:0 0 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow:0 0 2px  rgba(0,0,0,0.5);
+    box-shadow:0 0 2px rgba(0,0,0,0.5);
+}
+
+
+.desc{width:38%;float:left;text-align:left;position: relative;margin-left: 2%}
+.desc div{padding:0 0 0 0;}  
+.desc h3{font-size:24px;font-weight: bold;color:#000;}
+.desc p{font-size: 14px;margin:20px 0;color:#666;line-height:24px}
+.desc span{color:#000;font-weight: bold}
+
+.light{background: #fff;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
+.dark{background:#f5f5f5;border-top:1px solid #fff;}
+
+#joypad_wrapper section.sketches{background: #f4f3ef;border-top: 1px solid #fff;border-bottom: 1px solid #ccc}
+#joypad_wrapper section.loe{}
+#joypad_wrapper section.sdk{padding-bottom: 30px}
+#joypad_wrapper section.website{height:405px;}
+
+#joypad_wrapper section.sketches .pic img{max-width:1024px;width:100%;position: relative;top:-10px;}
+#joypad_wrapper section.loe .pic img{max-width:689px;width:100%;}
+#joypad_wrapper section.icons .pic img{max-width:720px;width:100%;}
+#joypad_wrapper section.sdk .pic img{max-width:512px;width:100%;}
+#joypad_wrapper section.skins .pic #slideshow img{max-width:664px;width:65%;}
+#joypad_wrapper section.game_console .pic img{max-width:1280px;width:95%;}
+#joypad_wrapper section.website .pic img{max-width:1394px;width:100%;position:relative;top:-20px;}
+
+
+#slideshow{position: relative;width:100%;}
+#slideshow img{position:absolute;width:65%;height:auto;}
+.active{z-index:99;}
+
+.button{display:inline-block;margin:10px 10px 0 0;background:#f0502c;color:#fff;padding:20px;text-decoration: none;text-shadow:none;font-size: 13px;text-transform: uppercase;
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-transition:all .2s ease-in-out;
+}
+.button:hover{background: #e44c2a;color:#fff;}
+.button i{margin-right:5px;}
+
+.team{overflow:hidden;padding-bottom:0;background: #f1f1f1}
+.team h3{font-size:24px;font-weight: bold;color:#000;}
+.team p{font-size: 14px;margin:10px 0;color:#666;line-height:24px}
+.team .inner{width:75%;margin:0 auto;}
+.team .inner div{float:left;width:50%;margin-top:20px;}
+.team .inner div img{margin:0 auto;display:block;}
+.team .inner div label{font-size:24px;font-weight:bold;display: block;margin-top:20px;}
+.team .inner div span{color:#666;margin:8px 0 10px 0;display: block}
+
+footer.single_footer{width:75%;margin:0 auto;padding:0 0 60px 0}
+footer a{color:#999;}
+footer p{font-size:14px;color:#999;margin-top:25px;}
+
+
+#openkit_wrapper{text-align: center;text-shadow:0 1px 0 #fff;padding:56px 0;margin:0 auto;}
+.openkit_hero{padding:60px 0 0 0;}
+.openkit_hero img.logo{margin-bottom: 20px;}
+.openkit_hero h1{font-size: 48px;font-weight: bold}
+.openkit_hero h3{font-size: 18px;color:#666;margin-top:10px;}
+.openkit_hero img.hero{max-width: 100%;height:auto;margin-top: 0;}
+
+#openkit_wrapper article{width:960px;margin:0 auto;}
+#openkit_wrapper section{padding:80px 0;}
+#openkit_wrapper section div.inner{position: relative;}
+
+#openkit_wrapper section img{width:100%;}
+#openkit_wrapper section p{position: relative}
+#openkit_wrapper section p label{position: absolute;background: #333;text-shadow:none;color:#fff;line-height:32px;left:-40px;top:10px;font-size: 12px;display: block;height:30px;width:30px;
+    border-radius: 20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+}

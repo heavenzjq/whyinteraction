@@ -32,6 +32,7 @@
       </div>
 
       <div class="hidden-xs">
+        <p><a href="http://localhost:8888">Back</a></p>
         <?php 
         if ( has_nav_menu( 'primary' ) ) {
           wp_nav_menu( array(

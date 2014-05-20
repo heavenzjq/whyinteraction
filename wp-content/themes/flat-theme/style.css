@@ -288,8 +288,18 @@ div.aligncenter {
 }
 .navbar .navbar-main {
   margin-top: 20px;
-  float: right;
+  /*float: right;*/
 }
+#menu-mymenu{
+  float: none;
+  margin-right: auto;
+  margin-left:auto;
+  display: table;
+}
+
+section h2{color:#ccc;font-size:24px;font-weight: normal;display:block;background:transparent url(../images/divider.png) center center repeat-x;}
+section h2 span{background:#f1f1f1;display:inline-block;padding:0 10px;}
+
 .navbar .navbar-main > li {
   margin-left: 5px;
 }
@@ -297,7 +307,7 @@ div.aligncenter {
   padding-top: 7px;
   padding-bottom: 7px;
   border-radius: 4px;
-  color: #bdc3c7;
+  color: #f0502c;
 }
 .navbar .navbar-main > li:focus > a,
 .navbar .navbar-main > li:active > a,
@@ -306,8 +316,8 @@ div.aligncenter {
 .navbar .navbar-main > li.active:hover > a,
 .navbar .navbar-main > li.open > a,
 .navbar .navbar-main > li.open:hover > a {
-  background-color: #2c3e50;
-  color: #fff;
+  /*background-color: #2c3e50;*/
+  color: #333;
 }
 .navbar .navbar-main .dropdown-menu {
   background-color: #2c3e50;
@@ -318,12 +328,13 @@ div.aligncenter {
 }
 .navbar .navbar-main .dropdown-menu > li > a {
   padding: 8px 15px;
-  color: #bdc3c7;
+  color: #f0502c;
 }
 .navbar .navbar-main .dropdown-menu > li:hover > a,
 .navbar .navbar-main .dropdown-menu > li:focus > a,
 .navbar .navbar-main .dropdown-menu > li.active > a {
-  background-color: rgba(0, 0, 0, 0.3);
+  /*background-color: rgba(0, 0, 0, 0.3);*/
+  color: #333;
 }
 .navbar .navbar-main .dropdown-menu > li:last-child > a {
   border-radius: 0 0 3px 3px;
@@ -1715,7 +1726,7 @@ background-color: #ECF0F1;
 
 }
 .navbar-inverse .navbar-nav>li a{
-    color:#BDC3C7;
+    color: #f0502c;
     padding: 10px 15px;
     display: block;
 }
@@ -1728,6 +1739,7 @@ blockquote small{
 /*responsive menu*/
 .navbar-toggle{
   margin-top: 25px;
+  background-color: #ccc;
 }
 
 /*bottom*/
@@ -1817,6 +1829,13 @@ ul#menu-company-menu li:before{
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.col-xs-12100, .col-sm-1225, .col-md-12,{
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 @media (min-width: 1200px) {
   .col-lg-1210, {

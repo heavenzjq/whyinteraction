@@ -15,7 +15,8 @@
 </section>
 
 <footer id="footer" class="midnight-blue">
-    WhyInteraction is UI/UX designer Wenhui Yu's Media Lab. All rights reserved. Last updated 04.2012 by Wenhui Yu. View Wenhui on LinkedIn
+	<p class="pull-left">© 2014 Company, Inc. </p> 
+    <p class="pull-right"><a class="top" href="#">Back to Top</a></p>
 </footer><!--/#footer-->
 
   <?php if(zee_option('zee_theme_layout')=='boxed'){ ?>
