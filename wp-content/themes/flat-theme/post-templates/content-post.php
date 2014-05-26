@@ -1,12 +1,3 @@
-<?php
-/**
- * Blogs Template
- *
- * Template Name: FrontPage
- *
- */
-
- ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -37,10 +28,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <!--<?php logo();?>-->
+        <?php logo();?>
       </div>
 
       <div class="hidden-xs">
+        <p><a href="http://localhost:8888">Back</a></p>
         <?php 
         if ( has_nav_menu( 'primary' ) ) {
           wp_nav_menu( array(
@@ -76,43 +68,12 @@
 
   <?php get_template_part( 'sub', 'title' ); ?>
 
-  <?php if( ! is_page() ) { ?>
-  <section id="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="primary" class="content-area">
-            <?php } ?>
-
-<section id="page">
-    <div class="container">
-        <div id="content" class="site-content" role="main">
-            <?php /* The loop */ ?>
-            <?php while ( have_posts() ) { the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php edit_post_link( __( 'Edit', ZEETEXTDOMAIN ), '<small class="edit-link pull-right ">', '</small><div class="clearfix"></div>' ); ?>
-                <?php if ( has_post_thumbnail() && ! post_password_required() ) { ?>
-                <div class="entry-thumbnail">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-                <?php } ?>
-                <div class="entry-content">
-                    <?php the_content(); ?>
-                    <?php zee_link_pages(); ?>
-                </div>
-            </article>
-            <?php } ?>
-        </div><!--/#content-->
-    </div>
-</section><!--/#page-->
-
-<?php if(!is_page()) { ?>
-</div><!--/#primary-->
-</div><!--/.col-lg-12-->
-</div><!--/.row-->
-</div><!--/.container.-->
-</section><!--/#main-->
-<?php } ?>
+<section id="main">
+  <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
+  <?php get_template_part( 'post-templates/content', get_post_format() ); ?>
+  <?php zee_post_nav(); ?>
+  <?php } } ?>
+</section>
 
 <section id="bottom" class="wet-asphalt">
   <div class="container">
@@ -123,8 +84,7 @@
 </section>
 
 <footer id="footer" class="midnight-blue">
-    <p class="pull-left">© 2014 Company, Inc. </p> 
-    <p class="pull-right"><a class="top" href="#">Back to Top</a></p>
+    <p class="pull-right"><a href="#">Back to top</a></p> © 2014 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a>
 </footer><!--/#footer-->
 
   <?php if(zee_option('zee_theme_layout')=='boxed'){ ?>

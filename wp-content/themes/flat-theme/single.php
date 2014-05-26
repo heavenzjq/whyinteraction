@@ -70,7 +70,7 @@
 
 <section id="main">
   <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
-  <?php get_template_part( 'post-templates/content', get_post_format() ); ?>
+  <?php get_template_part( 'post-templates/content', "portfolio" ); ?>
   <?php zee_post_nav(); ?>
   <?php } } ?>
 </section>
