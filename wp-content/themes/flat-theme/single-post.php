@@ -33,18 +33,6 @@
 
       <div class="hidden-xs">
         <p><a href="http://localhost:8888">Back</a></p>
-        <?php 
-        if ( has_nav_menu( 'primary' ) ) {
-          wp_nav_menu( array(
-            'theme_location'  => 'primary',
-            'container'       => false,
-            'menu_class'      => 'nav navbar-nav navbar-main',
-            'fallback_cb'     => 'wp_page_menu',
-            'walker'          => new wp_bootstrap_navwalker()
-            )
-          ); 
-        }
-        ?>
       </div>
 
       <div id="mobile-menu" class="visible-xs">
@@ -69,10 +57,18 @@
   <?php get_template_part( 'sub', 'title' ); ?>
 
 <section id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="primary" class="content-area">
   <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
   <?php get_template_part( 'post-templates/content', get_post_format() ); ?>
   <?php zee_post_nav(); ?>
   <?php } } ?>
+    </div><!--/#primary-->
+</div><!--/.col-lg-12-->
+</div><!--/.row-->
+</div><!--/.container.-->
 </section>
 
 <section id="bottom" class="wet-asphalt">
@@ -84,7 +80,8 @@
 </section>
 
 <footer id="footer" class="midnight-blue">
-    <p class="pull-right"><a href="#">Back to top</a></p> © 2014 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a>
+    <p class="pull-left">© 2014 Company, Inc. </p> 
+    <p class="pull-right"><a class="top" href="#">Back to Top</a></p>
 </footer><!--/#footer-->
 
   <?php if(zee_option('zee_theme_layout')=='boxed'){ ?>

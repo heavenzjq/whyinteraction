@@ -1256,7 +1256,7 @@ ul.social > li > a:hover {
 }
 .post,
 article.attachment {
-  background-color: #fff;
+  /*background-color: #fff;*/
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 20px;
