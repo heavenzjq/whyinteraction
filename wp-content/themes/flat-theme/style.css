@@ -277,6 +277,14 @@ div.aligncenter {
 .gallery-columns-9 .gallery-caption {
   display: none;
 }
+
+#header
+{
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.97);
+  z-index: 900;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 .navbar {
   margin-bottom: 0;
   border: none;
@@ -785,11 +793,16 @@ ul {
 .portfolio-item .item-inner {
   background: #fff;
   border: 1px solid #eee;
-  padding: 10px 10px 0;
+  /*padding: 10px 10px 0;*/
+  /*height: 300px;*/
   margin: 0 20px 20px 0;
+  border-radius: 4px;
   position: relative;
 }
 .portfolio-item img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
   width: 100%;
 }
 .portfolio-item h5 {
@@ -813,6 +826,8 @@ ul {
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
   vertical-align: middle;
+  border-radius: 4px;
+
   -webkit-transition: opacity 300ms;
   -moz-transition: opacity 300ms;
   -o-transition: opacity 300ms;
@@ -1415,6 +1430,8 @@ textarea#message {
   padding-top: 30px;
   padding-bottom: 30px;
   color: #bdc3c7;
+  background-color:#eee;
+  border-top: 1px solid #ddd;
 }
 #footer a {
   color: #bdc3c7;

@@ -25,7 +25,7 @@ section h2 span{background:#f1f1f1;display:inline-block;padding:0 10px;}
 #contact p{font-size: 18px;color:#666;margin-top:10px;}
 
 #contact .icons{margin:40px auto 0 auto;font-size: 68px;overflow:hidden;}
-#contact .icons li{float:left;width:20%;}
+#contact .icons li{float:left;width:16%;list-style: none;}
 #contact a{cursor: pointer;margin:0;text-shadow:none;width:100px;height:100px;border-radius:50%;display:inline-block;color:#999;
 	-webkit-transition:all .2s ease-in-out;
 	-moz-transition:all .2s ease-in-out;
@@ -39,6 +39,7 @@ section h2 span{background:#f1f1f1;display:inline-block;padding:0 10px;}
 #contact a.dribbble:hover {color:#ea4c89;}
 #contact a.instagram:hover {color:#3f729b;}
 #contact a.linkedin:hover {color:#0e76a8;}
+#contact a.pinterest:hover {color:#dd1812;}
 #contact a.email:hover {color:#dd1812;}
 
 footer{background:transparent url(../images/divider.png) center top repeat-x;overflow: hidden;}
