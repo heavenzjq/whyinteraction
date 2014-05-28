@@ -83,6 +83,8 @@ img.AlpinePhotoTiles-img-nocorners{
   background-position:center;
   margin:0 0 0 0;
   float:left;
+  min-height: 114px;
+  min-width: 114px;
 }
 .AlpinePhotoTiles-half-tile{
   

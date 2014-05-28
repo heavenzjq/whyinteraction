@@ -1854,6 +1854,14 @@ ul#menu-company-menu li:before{
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.col-1210{
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-: 0px;
+    width: 10%;
+}
 @media (min-width: 1200px) {
   .col-lg-1210, {
     float: left;
