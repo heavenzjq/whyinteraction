@@ -37,32 +37,24 @@
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only"><?php _e('Toggle navigation', ZEETEXTDOMAIN); ?></span>
+          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <?php logo();?>
       </div>
 
       <div class="hidden-xs">
-        <p><a href="http://localhost:8888">Home</a></p>
+        <ul id="menu-mymenu" class="nav navbar-nav navbar-main">
+          <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a title="Home" href="http://localhost:8888">Home</a></li>
+        </ul>      
       </div>
 
       <div id="mobile-menu" class="visible-xs">
         <div class="collapse navbar-collapse">
-          <?php 
-          if ( has_nav_menu( 'primary' ) ) {
-            wp_nav_menu( array(
-              'theme_location'  => 'primary',
-              'container'       => false,
-              'menu_class'      => 'nav navbar-nav',
-              'fallback_cb'     => 'wp_page_menu',
-              'walker'          => new wp_bootstrap_mobile_navwalker()
-              )
-            ); 
-          }
-          ?>
+          <ul id="menu-mymenu-1" class="nav navbar-nav">
+            <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a title="Home" href="http://localhost:8888">Home</a></li>
+          </ul>        
         </div>
       </div><!--/.visible-xs-->
     </div>

@@ -506,7 +506,7 @@
         if(options.imageHighlight){
           if(!options.imageBorder){
             newDivContainer.addClass('AlpinePhotoTiles-highlight-div');
-             newDivContainer.addClass('.col-lg-1210');
+             newDivContainer.addClass('col-lg-1210');
              newDivContainer.addClass('col-md-3');
              newDivContainer.addClass('col-sm-4');
              newDivContainer.addClass('col-xs-6');
