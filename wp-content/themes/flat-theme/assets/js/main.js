@@ -87,13 +87,33 @@ jQuery(function($) {
 		} else {
 			$('.scrollup').fadeOut();
 		}
+		var docViewTop = $(window).scrollTop();
+    	var docViewBottom = docViewTop + $(window).height();
+		if(docViewBottom > $("#about").offset().top && $(".AlpinePhotoTiles-image-div-container:hidden").size() > 0){
+			showInstagramImage();
+		}
 	});
 
 	$('.top').click(function(){
 		$("html, body").animate({ scrollTop: 0 }, 600);
 		return false;
 	});
-
-
-
 });
+
+function showInstagramImage(){
+	var items = jQuery(".AlpinePhotoTiles-image-div-container:hidden");
+	if(items.length > 0){
+		jQuery(items[Math.floor(Math.random()*items.length)]).show(showInstagramImage);
+	}
+}
+
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}

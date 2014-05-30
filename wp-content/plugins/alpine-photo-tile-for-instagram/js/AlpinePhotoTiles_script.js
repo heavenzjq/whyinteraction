@@ -339,7 +339,7 @@
             galleryContainer = s('<div class="AlpinePhotoTiles-image-div-container AlpinePhotoTiles-gallery-container"></div>');
             galleryContainer.css({
               "height":galleryHeight+"px",
-              "width":(width-8)+"px"
+              "width":(width-8)+"px",
             });
             
             currentRow.append(galleryContainer);
@@ -475,11 +475,13 @@
           newDivContainer.css({
             "height":(theHeight*0.99)+"px",
             //"width":(theWidth)+"px",
-            "overflow":"hidden"
+            "overflow":"hidden",
+            "display":"none"
           });
         }else{
           newDivContainer.css({
             "height":theHeight+"px",
+            "display":"none"
             //"width":theWidth+"px"
           });
         }
@@ -506,7 +508,7 @@
         if(options.imageHighlight){
           if(!options.imageBorder){
             newDivContainer.addClass('AlpinePhotoTiles-highlight-div');
-             newDivContainer.addClass('col-1210');
+            newDivContainer.addClass('col-1210');
              //newDivContainer.addClass('col-md-3');
              //newDivContainer.addClass('col-sm-4');
              //newDivContainer.addClass('col-xs-6');
