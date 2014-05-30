@@ -38,6 +38,11 @@ jQuery(function($) {
 				return false;
 			});
 		}
+		var docViewTop = $(window).scrollTop();
+    	var docViewBottom = docViewTop + $(window).height();
+		if(docViewBottom > $("#about").offset().top && $(".AlpinePhotoTiles-image-div-container:hidden").size() > 0){
+			showInstagramImage();
+		}
 	});
 
 	//contact form
