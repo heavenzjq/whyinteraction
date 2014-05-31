@@ -1,3 +1,5 @@
+var showing = false;
+
 jQuery(function($) {
 
 	//#main-slider
@@ -40,9 +42,9 @@ jQuery(function($) {
 		}
 		var docViewTop = $(window).scrollTop();
     	var docViewBottom = docViewTop + $(window).height();
-		if(docViewBottom > $("#about").offset().top && $(".AlpinePhotoTiles-image-div-container:hidden").size() > 0){
-			showInstagramImage();
-		}
+		// if(docViewBottom > $("#about").offset().top && $(".AlpinePhotoTiles-image-div-container:not(visiable)").size() > 0){
+		// 	showInstagramImage();
+		// }
 	});
 
 	//contact form
@@ -94,8 +96,11 @@ jQuery(function($) {
 		}
 		var docViewTop = $(window).scrollTop();
     	var docViewBottom = docViewTop + $(window).height();
-		if(docViewBottom > $("#about").offset().top && $(".AlpinePhotoTiles-image-div-container:hidden").size() > 0){
-			showInstagramImage();
+		if(docViewBottom > $("#about").offset().top && !showing){
+			if($(".AlpinePhotoTiles-image-div-container.invisible").size() > 0){
+				showing = true;
+				showInstagramImage();
+			}
 		}
 	});
 
@@ -106,9 +111,9 @@ jQuery(function($) {
 });
 
 function showInstagramImage(){
-	var items = jQuery(".AlpinePhotoTiles-image-div-container:hidden");
+	var items = jQuery(".AlpinePhotoTiles-image-div-container.invisible");
 	if(items.length > 0){
-		jQuery(items[Math.floor(Math.random()*items.length)]).show(showInstagramImage);
+		jQuery(items[Math.floor(Math.random()*items.length)]).addClass("visible");
 	}
 }
 

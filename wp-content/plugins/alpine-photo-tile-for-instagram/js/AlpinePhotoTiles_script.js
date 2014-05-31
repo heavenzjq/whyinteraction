@@ -476,12 +476,10 @@
             "height":(theHeight*0.99)+"px",
             //"width":(theWidth)+"px",
             "overflow":"hidden",
-            "display":"none"
           });
         }else{
           newDivContainer.css({
             "height":theHeight+"px",
-            "display":"none"
             //"width":theWidth+"px"
           });
         }
@@ -509,6 +507,7 @@
           if(!options.imageBorder){
             newDivContainer.addClass('AlpinePhotoTiles-highlight-div');
             newDivContainer.addClass('col-1210');
+            newDivContainer.addClass('invisible');
              //newDivContainer.addClass('col-md-3');
              //newDivContainer.addClass('col-sm-4');
              //newDivContainer.addClass('col-xs-6');
@@ -544,6 +543,8 @@
           var link = s('<div class="AlpinePhotoTiles-pin-it small" ><a href="http://pinterest.com/pin/create/button/?media='+media+'&url='+(options.siteURL)+'" class="pin-it-button" count-layout="horizontal" target="_blank" style="height:100%;width:100%;display:block;"></a></div>');
           newDiv.append(link);
         }
+
+        jQuery(newDivContainer).bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", showInstagramImage);
         
       }
       
