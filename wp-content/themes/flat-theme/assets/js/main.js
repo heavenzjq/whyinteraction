@@ -40,11 +40,6 @@ jQuery(function($) {
 				return false;
 			});
 		}
-		var docViewTop = $(window).scrollTop();
-    	var docViewBottom = docViewTop + $(window).height();
-		// if(docViewBottom > $("#about").offset().top && $(".AlpinePhotoTiles-image-div-container:not(visiable)").size() > 0){
-		// 	showInstagramImage();
-		// }
 	});
 
 	//contact form
@@ -114,6 +109,7 @@ function showInstagramImage(){
 	var items = jQuery(".AlpinePhotoTiles-image-div-container.invisible");
 	if(items.length > 0){
 		jQuery(items[Math.floor(Math.random()*items.length)]).addClass("visible");
+		jQuery(items[Math.floor(Math.random()*items.length)]).removeClass("invisible");
 	}
 }
 

@@ -546,6 +546,12 @@
 
         jQuery(newDivContainer).bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", showInstagramImage);
         
+        var docViewTop = jQuery(window).scrollTop();
+        var docViewBottom = docViewTop + jQuery(window).height();
+        if(docViewBottom > jQuery("#about").offset().top && !showing){
+            showing = true;
+            showInstagramImage();
+        }
       }
       
       function updateHeight(aDiv,aHeight){
