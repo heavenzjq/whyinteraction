@@ -89,12 +89,14 @@ jQuery(function($) {
 		} else {
 			$('.scrollup').fadeOut();
 		}
-		var docViewTop = $(window).scrollTop();
-    	var docViewBottom = docViewTop + $(window).height();
-		if(docViewBottom > $("#about").offset().top && !showing){
-			if($(".AlpinePhotoTiles-image-div-container.invisible").size() > 0){
-				showing = true;
-				showInstagramImage();
+		if($("#about").size() > 0){
+			var docViewTop = $(window).scrollTop();
+	    	var docViewBottom = docViewTop + $(window).height();
+			if(docViewBottom > $("#about").offset().top && !showing){
+				if($(".AlpinePhotoTiles-image-div-container.invisible").size() > 0){
+					showing = true;
+					showInstagramImage();
+				}
 			}
 		}
 	});

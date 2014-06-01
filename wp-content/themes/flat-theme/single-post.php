@@ -45,6 +45,7 @@
       </div><!--/.visible-xs-->
     </div>
   </header><!--/#header-->
+
   <?php get_template_part( 'sub', 'title' ); ?>
 
 <section id="main">
@@ -52,11 +53,11 @@
       <div class="row">
         <div class="col-lg-12">
           <div id="primary" class="content-area">
-  <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
+  <?php if(have_posts()){  the_post(); ?>
   <?php get_template_part( 'post-templates/content', get_post_format() ); ?>
   <?php zee_post_nav(); ?>
-  <?php } } ?>
-    </div><!--/#primary-->
+  <?php }  ?>
+  </div><!--/#primary-->
 </div><!--/.col-lg-12-->
 </div><!--/.row-->
 </div><!--/.container.-->

@@ -873,20 +873,19 @@ function zee_post_nav() {
         return;
     } 
     ?>
-    <nav class="navigation post-navigation" role="navigation">
-        <div class="pager">
-            <?php if ( $previous ) { ?>
-            <li class="previous">
+    <!-- <nav class="navigation post-navigation" role="navigation"> -->
+        <div id="post-navigation" class="pager">
+<!--             <?php if ( $next ) { ?>
+                <?php next_post_link( '%link', _x( '%title <i class="icon-long-arrow-right"></i>', 'Next post link', ZEETEXTDOMAIN ) ); ?>
+            <?php } ?> -->
+             <?php if ( $previous ) { ?>
                 <?php previous_post_link( '%link', _x( '<i class="icon-long-arrow-left"></i> %title', 'Previous post link', ZEETEXTDOMAIN ) ); ?>
-            </li>
-            <?php } ?>
+            <?php } ?> 
 
-            <?php if ( $next ) { ?>
-            <li class="next"><?php next_post_link( '%link', _x( '%title <i class="icon-long-arrow-right"></i>', 'Next post link', ZEETEXTDOMAIN ) ); ?></li>
-            <?php } ?>
+            
 
         </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
+    <!-- </nav>.navigation -->
     <?php
 }
 }
