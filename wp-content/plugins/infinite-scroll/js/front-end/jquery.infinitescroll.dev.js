@@ -42,7 +42,8 @@
             isDestroyed: false,
             isDone: false, // For when it goes all the way through the archive.
             isPaused: false,
-            currPage: 1
+            currPage: 1,
+            nextPath: undefined
         },
         debug: false,
 		behavior: undefined,
@@ -282,9 +283,10 @@
                     path = path.match(/^(.*?page=)1(\/.*|$)/).slice(1);
                     return path;
                 } else {
-                    this._debug('Sorry, we couldn\'t parse your Next (Previous Posts) URL. Verify your the css selector points to the correct A tag. If you still get this error: yell, scream, and kindly ask for help at infinite-scroll.com.');
-                    // Get rid of isInvalidPage to allow permalink to state
-                    opts.state.isInvalidPage = true;  //prevent it from running on this page.
+                    // this._debug('Sorry, we couldn\'t parse your Next (Previous Posts) URL. Verify your the css selector points to the correct A tag. If you still get this error: yell, scream, and kindly ask for help at infinite-scroll.com.');
+                    // // Get rid of isInvalidPage to allow permalink to state
+                    // opts.state.isInvalidPage = true;  //prevent it from running on this page.
+                    return path;
                 }
             }
             this._debug('determinePath', path);
@@ -346,6 +348,10 @@
 					break;
 
 				case 'append':
+                    var path = $(data).find(opts.nextSelector).attr('href');
+                    opts.state.nextPath = path;
+                    opts.state.path = path;
+
 					var children = box.children();
 					// if it didn't return anything
 					if (children.length === 0) {
@@ -382,6 +388,8 @@
 				// once the call is done, we can allow it again.
 				opts.state.isDuringAjax = false;
 			}
+
+
 
             callback(this, data, url);
 
@@ -533,6 +541,10 @@
 			// increment the URL bit. e.g. /page/3/
 			opts.state.currPage++;
 
+            if(opts.state.currPage == 2){
+                opts.state.nextPath = path;
+            }
+
             // Manually control maximum page 
             if ( opts.maxPage != undefined && opts.state.currPage > opts.maxPage ){
                 this.destroy();
@@ -542,7 +554,8 @@
 			// if we're dealing with a table we can't use DIVs
 			box = $(opts.contentSelector).is('table') ? $('<tbody/>') : $('<div/>');
 
-			desturl = (typeof path === 'function') ? path(opts.state.currPage) : path.join(opts.state.currPage);
+            desturl = opts.state.nextPath;
+			// desturl = (typeof path === 'function') ? path(opts.state.currPage) : path.join(opts.state.currPage);
 			instance._debug('heading into ajax', desturl);
 
 			method = (opts.dataType === 'html' || opts.dataType === 'json' ) ? opts.dataType : 'html+callback';
