@@ -1803,7 +1803,7 @@ ul#menu-company-menu li:before{
 
 /* Carousel base class */
 .jumbotron {
-  height: 500px;
+  height: 650px;
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -1892,6 +1892,16 @@ ul#menu-company-menu li:before{
 .visible{
   visibility: visible; opacity: 1;
 }
+
+/* CUSTOMIZED STYLES
+------------------------- */
+
+#portfolio-main
+{
+  margin-top:-80px;
+}
+
+
 
 
 

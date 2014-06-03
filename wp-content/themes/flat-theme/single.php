@@ -48,7 +48,7 @@
 
   <?php get_template_part( 'sub', 'title' ); ?>
 
-<section id="portfoliomain">
+<section id="portfolio-main">
   <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
   <?php get_template_part( 'post-templates/content', "portfolio" ); ?>
   <?php zee_post_nav(); ?>
