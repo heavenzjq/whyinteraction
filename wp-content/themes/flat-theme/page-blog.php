@@ -62,7 +62,7 @@
 
   <?php get_template_part( 'sub', 'title' ); ?>
 
-<section id="main">
+<section id="blogmain">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
