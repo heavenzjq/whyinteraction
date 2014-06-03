@@ -10,7 +10,14 @@
 
         <h1 class="entry-title">
             <?php the_title(); ?>
+            <br/>
             <?php edit_post_link( __( 'Edit', ZEETEXTDOMAIN ), '<small class="edit-link pull-right">', '</small>' ); ?>
+            <?php // Set up and print post meta information.
+            printf( '<span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></a></span> ',
+                esc_attr( get_the_date( 'c' ) ),
+                esc_html( get_the_date() )
+            );
+            ?>
         </h1> 
 
 
