@@ -64,8 +64,10 @@
 </section>
 
 <footer id="footer" class="midnight-blue">
-    <p class="pull-left">© 2014 Company, Inc. </p> 
+  <div class="container">
+    <p class="pull-left">© 2014 Wenhui Yu </p> 
     <p class="pull-right"><a class="top" href="#">Back to Top</a></p>
+  </div>
 </footer><!--/#footer-->
 
   <?php if(zee_option('zee_theme_layout')=='boxed'){ ?>

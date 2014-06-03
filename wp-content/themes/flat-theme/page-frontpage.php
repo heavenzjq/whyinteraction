@@ -30,15 +30,15 @@
 
   <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
     <div class="container">
-      <div class="navbar-header">
+    <!--   <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only"><?php _e('Toggle navigation', ZEETEXTDOMAIN); ?></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <!--<?php logo();?>-->
-      </div>
+        <?php logo();?>
+      </div> -->
 
       <div class="hidden-xs">
         <?php 
@@ -114,13 +114,13 @@
 </section><!--/#main-->
 <?php } ?>
 
-<section id="bottom" class="wet-asphalt">
+<!-- <section id="bottom" class="wet-asphalt">
   <div class="container">
     <div class="row">
       <?php dynamic_sidebar('bottom'); ?>
     </div>
   </div>
-</section>
+</section> -->
 
 <footer id="footer">
   <div class="container">
