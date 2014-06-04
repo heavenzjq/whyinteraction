@@ -1673,6 +1673,23 @@ blockquote small{
   background-color: #ccc;
 }
 
+/* Journal Page
+-------------------------------------------------------------- */
+
+#blogmain{
+  text-shadow: 0px 1px 0px #fff;
+}
+.entry-date {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+#blogmain article {
+  border-bottom: 1px solid #eee;
+}
+
+
 
 
 

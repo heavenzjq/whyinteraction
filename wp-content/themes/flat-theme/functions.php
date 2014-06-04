@@ -855,8 +855,6 @@ function zee_pagination() {
 
 
 if ( ! function_exists( 'zee_post_nav' ) ) {
-
-
 /**
  * Display post nav
  * @return [type] [description]
@@ -886,6 +884,37 @@ function zee_post_nav() {
 
         </div><!-- .nav-links -->
     <!-- </nav>.navigation -->
+    <?php
+}
+}
+if ( ! function_exists( 'zee_portfolio_prev' ) ) {
+function zee_portfolio_prev() {
+    global $post;
+
+    // Don't print empty markup if there's nowhere to navigate.
+    $previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+
+    if (! $previous ){
+        return;
+    } 
+    ?>
+    <li><?php previous_post_link( '%link', _x( '<span class="glyphicon glyphicon-chevron-right">', 'Previous post link', ZEETEXTDOMAIN ) ); ?></li>
+    <?php
+}
+}
+
+if ( ! function_exists( 'zee_portfolio_next' ) ) {
+function zee_portfolio_next() {
+    global $post;
+
+    // Don't print empty markup if there's nowhere to navigate.
+    $next     = get_adjacent_post( false, '', false );
+
+    if (! $next ){
+        return;
+    } 
+    ?>
+    <li><?php next_post_link( '%link', _x( '<span class="glyphicon glyphicon-chevron-left">', 'Next post link', ZEETEXTDOMAIN ) ); ?></li>
     <?php
 }
 }

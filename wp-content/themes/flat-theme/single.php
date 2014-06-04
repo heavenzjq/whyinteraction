@@ -19,31 +19,39 @@
     <div id="boxed">
   <?php } ?>
 
-  <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
-    <div class="container">
-      <div class="navbar-header">
+  <header id="header" class="navbar navbar-fixed-top" role="banner">
+    <!-- <div class="container"> -->
+     <!--  <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      </div>
+      </div> -->
 
-      <div class="hidden-xs">
-        <ul id="menu-mymenu" class="nav navbar-nav navbar-main">
-          <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a title="Home" href="http://localhost:8888">Home</a></li>
+      <!-- <div class="hidden-xs"> -->
+        <ul id="menu-portfolio" class="nav navbar-nav navbar-main">
+          <li class="col-xs-4"><a class="pull-left" href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li class="page-title col-xs-4">
+            <ul>
+              <?php zee_portfolio_next() ?>
+              <li><a href=""><?php the_title(); ?></a></li>
+              <?php zee_portfolio_prev() ?>
+            </ul>
+          </li>
+          <li class="col-xs-4"><a class="pull-right" href="#"><span class="glyphicon glyphicon-list"></span> All</a></li>
         </ul>      
-      </div>
+      <!-- </div> -->
 
-      <div id="mobile-menu" class="visible-xs">
+      <!-- <div id="mobile-menu" class="visible-xs">
         <div class="collapse navbar-collapse">
           <ul id="menu-mymenu-1" class="nav navbar-nav">
             <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a title="Home" href="http://localhost:8888">Home</a></li>
           </ul>        
         </div>
-      </div><!--/.visible-xs-->
-    </div>
+      </div> --><!--/.visible-xs-->
+    <!-- </div> -->
   </header><!--/#header-->
 
   <?php get_template_part( 'sub', 'title' ); ?>
@@ -51,7 +59,6 @@
 <section id="portfolio-main">
   <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
   <?php get_template_part( 'post-templates/content', "portfolio" ); ?>
-  <?php zee_post_nav(); ?>
   <?php } } ?>
 </section>
 

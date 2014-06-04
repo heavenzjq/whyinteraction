@@ -19,23 +19,30 @@
   margin-bottom: 0;
   border: none;
 }
-.navbar .navbar-brand {
-  font-size: 36px;
-  line-height: 50px;
-  color: #fff;
-}
+
 .navbar .navbar-main {
   margin-top: 10px;
 }
 
-.navbar .navbar-main > li {
+#menu-mymenu .navbar .navbar-main > li {
   margin-left: 5px;
 }
-.navbar .navbar-main > li > a {
+.navbar .navbar-main  li > a {
   padding-top: 7px;
   padding-bottom: 7px;
   border-radius: 4px;
   color: #f0502c;
+}
+
+
+.navbar .navbar-main  li > a:hover ,
+.navbar .navbar-main  li > a:focus,
+.navbar .navbar-main  li > a:active {
+  background: none;
+}
+
+.navbar .navbar-main > li >a:hover {
+ background: none;
 }
 .navbar .navbar-main > li:focus > a,
 .navbar .navbar-main > li:active > a,
@@ -168,15 +175,40 @@ section h2 span{
 
 
 
-/* Portfolio Page*/
+/* Portfolio Page
+-------------------------------------------------------------- */
 
 #portfolio-main
 {
   margin-top:-80px;
 }
 
-/* CUSTOMIZE THE JUMBOTRON
--------------------------------------------------- */
+#menu-portfolio{
+  float: none;
+  margin-right: auto;
+  margin-left:auto;
+  /*display: table;*/
+}
+
+#menu-portfolio .page-title{
+  margin-right: auto;
+  margin-left:auto;
+  text-align: center;
+  /*display: table;*/
+}
+#menu-portfolio .page-title ul
+{
+  display: table;
+  margin: auto;
+  padding-top: 7px;
+}
+#menu-portfolio .page-title li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+}
+
+/* CUSTOMIZE THE JUMBOTRON*/
 
 /* Carousel base class */
 .jumbotron {
@@ -203,8 +235,7 @@ section h2 span{
 
 
 
-/* MARKETING CONTENT
--------------------------------------------------- */
+/* MARKETING CONTENT*/
 
 /* Pad the edges of the mobile views a bit */
 .marketing {
@@ -248,8 +279,7 @@ section h2 span{
     width: 10%;
   }
 
-/* Featurettes
-------------------------- */
+/* Featurettes*/
 
 .featurette-divider {
   margin: 20px 0; /* Space out the Bootstrap <hr> more */
@@ -263,4 +293,20 @@ section h2 span{
 }
 
 
+
+/* Journal Page
 -------------------------------------------------------------- */
+
+#blogmain{
+  text-shadow: 0px 1px 0px #fff;
+}
+.entry-date {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+#blogmain article {
+  border-bottom: 1px solid #eee;
+}
+

@@ -33,31 +33,33 @@
     <div id="boxed">
   <?php } ?>
 
-  <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
-    <div class="container">
-      <div class="navbar-header">
+  <header id="header" class="navbar navbar-fixed-top" role="banner">
+    <!-- <div class="container"> -->
+     <!--  <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      </div>
+      </div> -->
 
-      <div class="hidden-xs">
-        <ul id="menu-mymenu" class="nav navbar-nav navbar-main">
-          <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a title="Home" href="http://localhost:8888">Home</a></li>
-        </ul>      
-      </div>
+      <ul id="menu-portfolio" class="nav navbar-nav navbar-main">
+        <li class="col-xs-4"><a class="pull-left" href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li class="page-title col-xs-4">
+          <a href="/journal">Wenhui's Journal</a>
+        </li>
+        <li class="col-xs-4"><a class="pull-right" href="#"><span class="glyphicon glyphicon-list"></span> All</a></li>
+      </ul>  
 
-      <div id="mobile-menu" class="visible-xs">
+     <!--  <div id="mobile-menu" class="visible-xs">
         <div class="collapse navbar-collapse">
           <ul id="menu-mymenu-1" class="nav navbar-nav">
             <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a title="Home" href="http://localhost:8888">Home</a></li>
           </ul>        
         </div>
-      </div><!--/.visible-xs-->
-    </div>
+      </div> --><!--/.visible-xs-->
+    <!-- </div> -->
   </header><!--/#header-->
 
   <?php get_template_part( 'sub', 'title' ); ?>
@@ -77,13 +79,13 @@
 </div><!--/.container.-->
 </section>
 
-<section id="bottom" class="wet-asphalt">
+<!-- <section id="bottom" class="wet-asphalt">
   <div class="container">
     <div class="row">
       <?php dynamic_sidebar('bottom'); ?>
     </div>
   </div>
-</section>
+</section> -->
 
 <footer id="footer" class="midnight-blue">
     <p class="pull-left">© 2014 Company, Inc. </p> 
