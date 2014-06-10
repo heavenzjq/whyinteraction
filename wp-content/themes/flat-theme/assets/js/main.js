@@ -1,5 +1,8 @@
 var showing = false;
 
+var switchInstagramImageIntervalId;
+
+
 jQuery(function($) {
 
 	//#main-slider
@@ -108,11 +111,65 @@ jQuery(function($) {
 });
 
 function showInstagramImage(){
+	if(switchInstagramImageIntervalId == undefined){
+		switchInstagramImageIntervalId = setInterval(switchInstagramImage, 2000);
+	}
 	var items = jQuery(".AlpinePhotoTiles-image-div-container.invisible");
 	if(items.length > 0){
 		jQuery(items[Math.floor(Math.random()*items.length)]).addClass("visible");
 		jQuery(items[Math.floor(Math.random()*items.length)]).removeClass("invisible");
+	}else if(jQuery('a',this).size() > 1){
+		var showingFace = jQuery('a.front',this);
+		var hideFace = jQuery('a.back',this);
+
+		if(jQuery(this).hasClass('flipped')){
+			showingFace = jQuery('a.back',this);
+			hideFace = jQuery('a.front',this);
+		}
+
+		var herf = jQuery(showingFace).attr('href');
+		jQuery('a[href="'+herf+'"] img').addClass('activeImg');
+        
+        herf = jQuery(hideFace).attr('href');
+        jQuery('a[href="'+herf+'"] img').removeClass('activeImg');
+        jQuery('a[href="'+herf+'"] img').addClass('inActiveImg');
+
+        jQuery(hideFace).remove();
 	}
+}
+
+function switchInstagramImage(){
+	var items = jQuery(".AlpinePhotoTiles-image-div-container");
+
+	var item = items[Math.floor(Math.random()*items.length)];
+
+	if(jQuery('a',item).size() < 2){
+		addNewImageDiv(jQuery(item));
+	}
+	jQuery(item).toggleClass("flipped");
+}
+
+function addNewImageDiv(imageContainer){
+	var inactiveImgs = jQuery(".inActiveImg");
+	if(inactiveImgs.size() < 1){
+		return;
+	}
+	var inactiveImg = inactiveImgs[Math.floor(Math.random()*inactiveImgs.length)];
+	jQuery(inactiveImg).removeClass("inActiveImg");
+
+	var newDiv = jQuery('<div id="'+jQuery("div",imageContainer).attr("id")+'" class="AlpinePhotoTiles-image-div"></div>');   
+    newDiv.css({
+            'background-image':'url("'+jQuery(inactiveImg).attr("src")+'")'
+          });  
+    newDiv.attr("oncontextmenu","return false;");
+
+    imageContainer.append(newDiv);
+
+    if(jQuery('a',imageContainer).hasClass('front')){
+    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face back" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
+    }else{
+    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face front" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
+    }
 }
 
 function isScrolledIntoView(elem)

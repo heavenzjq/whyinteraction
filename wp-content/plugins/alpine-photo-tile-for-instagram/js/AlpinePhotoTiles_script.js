@@ -20,7 +20,7 @@
     return this.each(function() {  
       var parent = s(this), 
         imageList = s(".AlpinePhotoTiles_image_list_class",parent),
-        images = s('.AlpinePhotoTiles-image',imageList),
+        images = s('.AlpinePhotoTiles-image.activeImg',imageList),
         allPerms = s('.AlpinePhotoTiles-link',imageList),
         width = parent.width(),
         currentRow,img,newDiv,newDivContainer,src,url,height,theClasses,theHeight,theWidth,perm,nextHeight,tempW,tempH,
@@ -425,7 +425,8 @@
           currentRow = s('<div class="AlpinePhotoTiles-row"></div>');
           //currentRow.css({'height':height+'px'});
           parent.append(currentRow);
-        }  
+        } 
+        currentRow.addClass("flip"); 
       }
       function addDiv(i){
         if(!s.support.leadingWhitespace && !d.querySelector){
@@ -492,7 +493,7 @@
             newDiv.wrap('<a href="'+perm.href+'" title="'+perm.title+'" alt="'+perm.title+'"  class="AlpinePhotoTiles-link AlpinePhotoTiles-lightbox" target="'+perm.target+'"></a>');
             s(perm).removeClass( 'AlpinePhotoTiles-lightbox' );
           }else{
-            newDiv.wrap('<a href="'+perm.href+'" class="AlpinePhotoTiles-link" target="'+perm.target+'"></a>');
+            newDiv.wrap('<a href="'+perm.href+'" class="AlpinePhotoTiles-link face front" target="'+perm.target+'"></a>');
           }
         }
         /*if( img.title ){
@@ -508,6 +509,7 @@
             newDivContainer.addClass('AlpinePhotoTiles-highlight-div');
             newDivContainer.addClass('col-1210');
             newDivContainer.addClass('invisible');
+            newDivContainer.addClass('card');
              //newDivContainer.addClass('col-md-3');
              //newDivContainer.addClass('col-sm-4');
              //newDivContainer.addClass('col-xs-6');

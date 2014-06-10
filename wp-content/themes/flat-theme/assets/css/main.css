@@ -143,10 +143,68 @@ section h2 span{
     padding:0 10px;
 }
 
+/* about */
+
 #about{overflow: hidden;padding-bottom:10px;}	
 .bio{text-align: left;margin-top: 40px;}
 .bio p{margin-bottom:30px;font-size:18px;line-height: 24px;}
 
+.flip{
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+}
+
+.flip .card {
+  -webkit-transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  
+  -o-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+
+  transition: 0.5s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.flip .card.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip .card .face {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.flip .card .front {
+  position: absolute;
+  z-index: 1;
+}
+
+.flip .card .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  
+}
+
+/* Contact */
 .dribbble_link{color:#ea4c89;}
 .instagram_link{color:#3f729b;}
 .twitter_link{color:#00acee;}
@@ -172,8 +230,6 @@ section h2 span{
 #contact a.linkedin:hover {color:#0e76a8;}
 #contact a.pinterest:hover {color:#dd1812;}
 #contact a.email:hover {color:#dd1812;}
-
-
 
 /* Portfolio Page
 -------------------------------------------------------------- */

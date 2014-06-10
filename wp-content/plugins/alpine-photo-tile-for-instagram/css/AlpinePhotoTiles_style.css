@@ -120,7 +120,7 @@ img.AlpinePhotoTiles-img-nocorners{
 
 
 .AlpinePhotoTiles-image-div-container{
-  overflow:hidden;
+  /*overflow:hidden;*/
 }
 .AlpinePhotoTiles-gallery-container{
   margin:0 0 0 4px;

@@ -798,7 +798,7 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
 				$this->echo_point( 'Place photos in HTML' );
 				$css = "margin:1px 0 5px 0;padding:0;max-width:100%;";
         for($i = 0;$i<$opts[$src.'_photo_number'];$i++){
-					$this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,$ssl,$pin,$css); // Add image
+					$this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,true,$ssl,$pin,$css); // Add image
         }
         $this->echo_point( 'Placement complete' );
         $this->add_credit_link($wid);
@@ -858,7 +858,7 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
           $this->add('<div class="AlpinePhotoTiles_cascade_column" style="width:'.$width.'%;float:left;margin:0;">');
           $this->add('<div class="AlpinePhotoTiles_cascade_column_inner" style="display:block;margin:0 3px;overflow:hidden;">');
           for($i = $col;$i<$opts[$src.'_photo_number'];$i+=$opts['style_column_number']){
-            $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,$ssl,$pin,$css); // Add image
+            $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,true,$ssl,$pin,$css); // Add image
           }
           $this->add('</div></div>');
         }
@@ -967,9 +967,18 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
 				
 				$this->echo_point( 'Place photos in HTML' );
         $this->add('<div id="'.$wid.'-image-list" class="AlpinePhotoTiles_image_list_class" style="display:none;visibility:hidden;">'); 
-          for($i=0;$i<$opts[$src.'_photo_number'];$i++){
 
-						$this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,$ssl,false,false); // Add image
+        $found = ( $this->check_active_result('photos') && is_array($this->get_active_result('photos') ))?count( $this->get_active_result('photos') ):0;
+        $num = $opts[$src.'_photo_number'];
+        
+          for($i=0;$i<$found ;$i++){
+            if($i < $num){
+              $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,true,$ssl,false,""); // Add image
+            }else{
+              $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,false,$ssl,false,""); // Add image
+            }
+            
+						
             
             if( isset($opts['style_option']) && "gallery" == $opts['style_option'] ){
 							// Load original image size
@@ -1130,6 +1139,7 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
     $src = $this->get_private('src');
     $found = ( $this->check_active_result('photos') && is_array($this->get_active_result('photos') ))?count( $this->get_active_result('photos') ):0;
     $num = $this->get_active_option( $src.'_photo_number' );
+    
     $this->set_active_option( $src.'_photo_number', min( $num, $found ) );
   }  
 /**
@@ -1173,15 +1183,19 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
  *  @ Updated 1.2.7
  *  Possible change: place original image as 'alt' and load image as needed
  */
-  function add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,$ssl=false,$pin=false,$css=""){
+  function add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,$isActive,$ssl=false,$pin=false,$css=""){
     $imagetitle = $this->get_photo_info($i,'image_title');
     $imagesrc = $this->get_photo_info($i,'image_source');
     
     if( $ssl ){ $imagesrc = str_replace("http:", "https:", $imagesrc, $temp = 1); }
     if( $pin ){ $this->add('<div class="AlpinePhotoTiles-pinterest-container" style="position:relative;display:block;" >'); }
-
+    
+    $imgclass = 'inActiveImg';
+    if($isActive){
+      $imgclass = 'activeImg';
+    }
     $has_link = $this->get_link($i,$imagetitle,$src,$ssl); // Add link
-		$inside = '<img id="'.$wid.'-tile-'.$i.'" class="AlpinePhotoTiles-image '.$shadow.' '.$border.' '.$curves.' '.$highlight.'" src="'. $imagesrc .'" ';
+		$inside = '<img id="'.$wid.'-tile-'.$i.'" class="AlpinePhotoTiles-image '.$shadow.' '.$border.' '.$curves.' '.$highlight.' '.$imgclass.'" src="'. $imagesrc .'" ';
 		$inside .= 'title=" '. $imagetitle .' " alt=" '. $imagetitle .' " border="0" hspace="0" vspace="0" style="'.$css.'" '.$onContextMenu.' />'; // Careful about caps with ""
     $this->add($inside); // Override the max-width set by theme
     if( $has_link ){ $this->add('</a>'); } // Close link
