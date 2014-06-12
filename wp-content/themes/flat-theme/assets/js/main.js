@@ -108,6 +108,12 @@ jQuery(function($) {
 		$("html, body").animate({ scrollTop: 0 }, 600);
 		return false;
 	});
+
+	//Carousel
+	$('.row-fluid').click(function() {
+	  $('#myCarousel').carousel('next');
+	  $('#myCarousel').carousel('pause');
+	});
 });
 
 function showInstagramImage(){
