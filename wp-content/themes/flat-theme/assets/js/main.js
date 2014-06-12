@@ -112,7 +112,6 @@ jQuery(function($) {
 	//Carousel
 	$('.row-fluid').click(function() {
 	  $('#myCarousel').carousel('next');
-	  $('#myCarousel').carousel('pause');
 	});
 });
 
