@@ -49,7 +49,35 @@
         <li class="page-title col-xs-4">
           <a href="/journal">Wenhui's Journal</a>
         </li>
-        <li class="col-xs-4"><a class="pull-right" href="#"><span class="glyphicon glyphicon-list"></span> All</a></li>
+        <li class="col-xs-4">
+          <div class="btn-group pull-right">
+              <button type="button" class="btn btn-danger glyphicon glyphicon-list" data-toggle="dropdown"> All</button>
+<!--               <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button> -->
+              <ul class="dropdown-menu" role="menu">
+                <?php
+                  $type = 'post';
+                  $args=array(
+                    'post_type' => $type,
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,
+                    'caller_get_posts'=> 1
+                    );
+                  $my_query = null;
+                  $my_query = new WP_Query($args);
+                  if( $my_query->have_posts() ) {
+                    while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                      <li><p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p></li>
+                      <?php
+                    endwhile;
+                  }
+                  wp_reset_query();  // Restore global post data stomped by the_post().
+                  ?>
+              </ul>
+            </div>
+        </li>
       </ul>  
 
      <!--  <div id="mobile-menu" class="visible-xs">
