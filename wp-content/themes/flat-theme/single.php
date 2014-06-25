@@ -41,7 +41,7 @@
             </ul>
           </li>
           <li class="col-xs-4">
-            <label class="menuButton no-scroll btn-group pull-right" for="checkMenu"> All</label>              
+            <label class="menuButton pull-right" for="checkMenu"><span class="glyphicon glyphicon-list"></span> All</label>              
             <input type="checkbox" id="checkMenu">
             <label class="menuOverlay" for="checkMenu"></label>
             <div class="menuContainer">
@@ -59,7 +59,7 @@
                         $my_query = new WP_Query($args);
                         if( $my_query->have_posts() ) {
                           while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                            <li><p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p></li>
+                            <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
                             <?php
                           endwhile;
                         }
