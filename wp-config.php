@@ -22,7 +22,7 @@ define('DB_NAME', 'wordpress');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '8711784818');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'cKPA>%)[LNtnX<zvX]I_`|tE|bR*/yY~3SSo2__qkHspLX&$Oso}5sr&=}|)*p[U');
-define('SECURE_AUTH_KEY',  '6)JYm*t6i^i(DJYxurG=LWd&$jQN&&POO{&#(n >!LkrfYU(|#9^n}c9B({E4JV*');
-define('LOGGED_IN_KEY',    '97F,K+qTorD5k;-Mx,f%|D|S_T-/dk+U)dCUkE*utaqC8c +DXf |:96ok@.FKAL');
-define('NONCE_KEY',        'p32T!2HLzn-mp9#<?-5^[[|4_sA]LoZe@44-b&VgxM@5?9MTeZ}s-afJySmWyz}n');
-define('AUTH_SALT',        'y+B;X~+!PL~]-7G{6M@Vk1Q7jd;?-+a=`8[>::s[iJ#2t=F*gp?V8:)./J`asN1^');
-define('SECURE_AUTH_SALT', 'KO][-[Os-s$[CsR1soQBPB/kz{NSSh?ega--N1m`!5q|yb<):PN2d1W.QG!j2Sv`');
-define('LOGGED_IN_SALT',   'Q$OA|)8/Dsg(KUnSREfk7gs*Qd!/c%!Z?NT8y^fYZoA8P|T %.iE`sD:obH3rM?+');
-define('NONCE_SALT',       '!J{FrVDB7Fpq!tRr %3tM8sza*n%dOi)seAp6W$+zuHXKWF}ma,qJ+A3PW6 Z8N[');
+define('AUTH_KEY',         '');
+define('SECURE_AUTH_KEY',  '');
+define('LOGGED_IN_KEY',    '');
+define('NONCE_KEY',        '');
+define('AUTH_SALT',        '');
+define('SECURE_AUTH_SALT', '');
+define('LOGGED_IN_SALT',   '');
+define('NONCE_SALT',       '');
 
 /**#@-*/
 
@@ -78,7 +78,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 

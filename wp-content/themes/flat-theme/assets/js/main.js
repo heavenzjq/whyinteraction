@@ -68,6 +68,20 @@ jQuery(function($) {
 		social_tools: false
 	});	
 
+	// ask to fastclick to remove the 300ms tap delay on mobile browsers
+	window.addEventListener( 'load', function() {
+	      FastClick.attach( document.body );
+	}, false);
+
+	// ask to fastclick to remove the 300ms tap delay on mobile browsers
+    // prevent scrolling mechanism to happen on selected elements
+	  var noScrolls = document.querySelectorAll( '.no-scroll' );
+	  var noScrollFn = function( e ) { e.preventDefault(); };
+	  Array.prototype.forEach.call( noScrolls, function(el,i){
+	    el.addEventListener( 'touchstart', noScrollFn );
+	  });
+
+
 	// jQuery(window).resize(function(){
  //        $('.portfolio-items').isotope('reLayout');
  //    });
