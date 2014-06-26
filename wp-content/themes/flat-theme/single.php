@@ -48,6 +48,9 @@
               <div class="scrollContainer">
                 <ul class="options">
                       <?php
+                        the_post(); 
+                        $postid = get_the_ID();
+
                         $type = 'zee_portfolio';
                         $args=array(
                           'post_type' => $type,
@@ -57,9 +60,10 @@
                           );
                         $my_query = null;
                         $my_query = new WP_Query($args);
+
                         if( $my_query->have_posts() ) {
                           while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                            <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+                            <li class="<?php mark_hightlight($postid) ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
                             <?php
                           endwhile;
                         }
@@ -85,9 +89,9 @@
   <?php get_template_part( 'sub', 'title' ); ?>
 
 <section id="portfolio-main">
-  <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
+
   <?php get_template_part( 'post-templates/content', "portfolio" ); ?>
-  <?php } } ?>
+
 </section>
 
 <section id="bottom" class="wet-asphalt">

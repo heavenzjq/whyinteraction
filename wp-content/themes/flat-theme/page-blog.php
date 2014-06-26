@@ -49,35 +49,38 @@
         <li class="page-title col-xs-4">
           <a href="/journal">Wenhui's Journal</a>
         </li>
-        <li class="col-xs-4">
-          <div class="btn-group pull-right">
-              <button type="button" class="btn btn-danger glyphicon glyphicon-list" data-toggle="dropdown"> All</button>
-<!--               <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-              </button> -->
-              <ul class="dropdown-menu" role="menu">
-                <?php
-                  $type = 'post';
-                  $args=array(
-                    'post_type' => $type,
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'caller_get_posts'=> 1
-                    );
-                  $my_query = null;
-                  $my_query = new WP_Query($args);
-                  if( $my_query->have_posts() ) {
-                    while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                      <li><p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p></li>
+       <li class="col-xs-4">
+            <label class="menuButton pull-right" for="checkMenu"><span class="glyphicon glyphicon-list"></span> All</label>              
+            <input type="checkbox" id="checkMenu">
+            <label class="menuOverlay" for="checkMenu"></label>
+            <div class="menuContainer">
+              <div class="scrollContainer">
+                <ul class="options">
                       <?php
-                    endwhile;
-                  }
-                  wp_reset_query();  // Restore global post data stomped by the_post().
-                  ?>
-              </ul>
+                        the_post(); 
+                        $postid = get_the_ID();
+
+                        $type = 'post';
+                        $args=array(
+                          'post_type' => $type,
+                          'post_status' => 'publish',
+                          'posts_per_page' => -1,
+                          'ignore_sticky_posts'=> 1
+                          );
+                        $my_query = null;
+                        $my_query = new WP_Query($args);
+                        if( $my_query->have_posts() ) {
+                          while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                            <li class="<?php mark_hightlight($postid) ?>"><a href="#post_<?php the_ID(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+                            <?php
+                          endwhile;
+                        }
+                        wp_reset_query();  // Restore global post data stomped by the_post().
+                        ?>
+                    </ul>
+              </div>        
             </div>
-        </li>
+          </li>
       </ul>  
 
      <!--  <div id="mobile-menu" class="visible-xs">
@@ -97,10 +100,10 @@
       <div class="row">
         <div class="col-lg-12">
           <div id="primary" class="content-area">
-  <?php if(have_posts()){  the_post(); ?>
+
   <?php get_template_part( 'post-templates/content', get_post_format() ); ?>
   <?php zee_post_nav(); ?>
-  <?php }  ?>
+
   </div><!--/#primary-->
 </div><!--/.col-lg-12-->
 </div><!--/.row-->

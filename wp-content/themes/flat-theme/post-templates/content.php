@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<section id="post_<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
 
         <!--<?php if ( has_post_thumbnail() && ! post_password_required() ) { ?>
@@ -37,5 +37,5 @@
         <?php zee_link_pages(); ?>
     </footer>
 
-</article><!--/#post-->
+</section><!--/#post-->
 

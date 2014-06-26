@@ -57,7 +57,7 @@
         pathParse: undefined,
         dataType: 'html',
         appendCallback: true,
-        bufferPx: 400,
+        bufferPx: 1000,
         errorCallback: function () { },
         infid: 0, //Instance ID
         pixelsFromNavToBottom: undefined,
@@ -113,6 +113,7 @@
 			var $window = $(window);
 			var instance = this;
 
+            var defaultLoadPostCount = 5;
 			// Validate selectors
             if (!instance._validate(options)) {
 				return false;
@@ -160,7 +161,14 @@
 
             // determine loading.finished actions
             opts.loading.finished = opts.loading.finished || function() {
-                opts.loading.msg.fadeOut(opts.loading.speed);
+                if(opts.state.currPage % defaultLoadPostCount == 0){
+                    opts.loading.msg.fadeOut(opts.loading.speed);
+                }else{
+                    opts.loading.msg.show(opts.loading.speed, $.proxy(function() {
+                        this.beginAjax(opts);
+                    }, self))
+                }
+                
             };
 
 			// callback loading
@@ -191,9 +199,10 @@
             this._setup();
 
 			// Setups the prefill method for use
-			if (opts.prefill) {
-				this._prefill();
-			}
+			//if (opts.prefill) {
+			//	this._prefill();
+			//}
+            instance.scroll();
 
             // Return true to indicate successful creation
             return true;

@@ -1362,3 +1362,12 @@ function zee_the_attached_image() {
 }
 }
 
+if( ! function_exists('mark_hightlight')){
+    function mark_hightlight($post_id){
+        $post                = get_post();
+        if($post_id == $post->ID){
+            echo "mark_hightlight";
+        }
+    }
+}
+
