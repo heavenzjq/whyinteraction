@@ -2,6 +2,8 @@ var showing = false;
 
 var switchInstagramImageIntervalId;
 
+var selectedBlog = null;
+
 
 jQuery(function($) {
 
@@ -25,7 +27,7 @@ jQuery(function($) {
 	//portfolio
 	$(window).load(function(){
 		$portfolio_selectors = $('.portfolio-filter >li>a');
-		if($portfolio_selectors!='undefined'){
+		if($portfolio_selectors!='undefined' && $portfolio_selectors.size() > 0){
 			$portfolio = $('.portfolio-items');
 			$portfolio.isotope({
 				itemSelector : 'li',
@@ -93,11 +95,18 @@ jQuery(function($) {
 		var target = this.hash,
 		$target = $(target);
 
-		$('html, body').stop().animate({
-			'scrollTop': $target.offset().top-80
-		}, 300, 'swing', function () {
-				window.location.hash = target;
-		});
+		selectedBlog = target;
+		if($target.size() == 0){
+			$("html, body").stop().animate({ 
+				scrollTop: jQuery(document).height()-jQuery(window).height() 
+			},300, 'swing', changePost);
+		}else{
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top-80
+			}, 300, 'swing', function () {
+					window.location.hash = target;
+			});
+		}
 	});
 
 	$(window).scroll(function(){
@@ -201,3 +210,26 @@ function isScrolledIntoView(elem)
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
+
+function changePost(){
+	if(selectedBlog == null){
+		return;
+	}
+	if(jQuery(selectedBlog).size() == 0){
+		if(jQuery("#infscr-loading").css('display') == 'none'){
+			jQuery("html, body").animate({ scrollTop: jQuery(document).height()-jQuery(window).height() }, changePost);
+		}else{
+			setTimeout(changePost, 2000);
+		}
+	}else{
+		jQuery('html, body').stop().animate({
+				'scrollTop': jQuery(selectedBlog).offset().top-80
+			}, 300, 'swing', function () {
+					window.location.hash = selectedBlog;
+			});
+		jQuery('#checkMenu').prop('checked', false);
+		jQuery(".mark_hightlight").removeClass("mark_hightlight");
+		jQuery(selectedBlog).addClass("mark_hightlight");
+	}
+}
+

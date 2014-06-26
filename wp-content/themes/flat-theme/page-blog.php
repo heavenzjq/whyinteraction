@@ -71,7 +71,7 @@
                         $my_query = new WP_Query($args);
                         if( $my_query->have_posts() ) {
                           while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                            <li class="<?php mark_hightlight($postid) ?>"><a href="#post_<?php the_ID(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+                            <li class="<?php mark_hightlight($postid) ?>" onclick="changePost();"><a href="#post_<?php the_ID(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
                             <?php
                           endwhile;
                         }
