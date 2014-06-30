@@ -301,16 +301,18 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
     ?>
     <li class="portfolio-item <?php echo $slugs; ?> col-lg-3 col-md-4 col-sm-6 col-xs-12">
       <div class="item-inner">
-        <?php 
-        echo get_the_post_thumbnail( $value->ID, array(300,300), array( 
-          'class' => "img-responsive", 
-          'alt' => trim(strip_tags( $value->post_title )),
-          'title' => trim(strip_tags( $value->post_title ))
-          )); 
-          ?> 
+        <a href="<?php echo get_permalink( $value->ID ); ?>">
+          <?php 
+          echo get_the_post_thumbnail( $value->ID, array(300,300), array( 
+            'class' => "img-responsive", 
+            'alt' => trim(strip_tags( $value->post_title )),
+            'title' => trim(strip_tags( $value->post_title ))
+            )); 
+            ?> 
+          </a>
           <a href="<?php echo get_permalink( $value->ID ); ?>"><h5><?php echo $value->post_title; ?></h5></a>
           <p> <?php echo $value->post_excerpt; ?>  </p>
-          <div class="overlay">
+          <div class="overlay hidden-xs">
             <!--<?php 
             $full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
             $img_src= $full_img[0];
