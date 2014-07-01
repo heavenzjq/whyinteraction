@@ -236,6 +236,17 @@
 /* Portfolio Page
 -------------------------------------------------------------- */
 
+/* Fixed Background image */
+div.simpleBackImg { 
+                height:650px;
+            }
+
+@media only screen and (max-width: 640px) {
+            div.simpleBackImg { 
+                height:350px;
+            }
+        }
+
 /* Overlay Side menu  */
 
 input[type="checkbox"] {
