@@ -40,7 +40,7 @@
         <?php logo();?>
       </div> -->
 
-      <div class="hidden-xs">
+      <div>
         <?php 
         if ( has_nav_menu( 'primary' ) ) {
           wp_nav_menu( array(
@@ -55,7 +55,7 @@
         ?>
       </div>
 
-      <div id="mobile-menu" class="visible-xs">
+      <!--<div id="mobile-menu" class="visible-xs">
         <div class="collapse navbar-collapse">
           <?php 
           if ( has_nav_menu( 'primary' ) ) {
@@ -69,7 +69,7 @@
             ); 
           }
           ?>
-        </div>
+        </div>-->
       </div><!--/.visible-xs-->
     </div>
   </header><!--/#header-->
