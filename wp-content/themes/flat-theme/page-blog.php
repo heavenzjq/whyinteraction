@@ -45,12 +45,12 @@
       </div> -->
 
       <ul id="menu-portfolio" class="nav navbar-nav navbar-main">
-        <li class="col-xs-4"><a class="pull-left" href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li class="page-title col-xs-4">
+        <li class="col-xs-2"><a class="pull-left" href="/"><span class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a></li>
+        <li class="page-title col-xs-8">
           <a href="/journal">Wenhui's Journal</a>
         </li>
-       <li class="col-xs-4">
-            <label class="menuButton pull-right" for="checkMenu"><span class="glyphicon glyphicon-list"></span> All</label>              
+       <li class="col-xs-2">
+            <label class="menuButton pull-right" for="checkMenu"><span class="glyphicon glyphicon-list"></span><span class="hidden-xs"> All</span></label>              
             <input type="checkbox" id="checkMenu">
             <label class="menuOverlay" for="checkMenu"></label>
             <div class="menuContainer">
