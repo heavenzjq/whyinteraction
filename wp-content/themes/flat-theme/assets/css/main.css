@@ -24,13 +24,10 @@
   margin-top: 10px;
 }
 
-#menu-mymenu .navbar .navbar-main > li {
-  margin-left: 5px;
-}
 .navbar .navbar-main  li > a {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  border-radius: 4px;
+ /* padding-top: 7px;
+  padding-bottom: 7px;*/
+  padding:7px 10px;
   color: #f0502c;
 }
 
@@ -53,45 +50,6 @@
 .navbar .navbar-main > li.open:hover > a {
   /*background-color: #2c3e50;*/
   color: #333;
-}
-.navbar .navbar-main .dropdown-menu {
-  background-color: #2c3e50;
-  box-shadow: none;
-  border: 0;
-  padding: 0;
-  margin-top: -3px;
-}
-.navbar .navbar-main .dropdown-menu > li > a {
-  padding: 8px 15px;
-  color: #f0502c;
-}
-.navbar .navbar-main .dropdown-menu > li:hover > a,
-.navbar .navbar-main .dropdown-menu > li:focus > a,
-.navbar .navbar-main .dropdown-menu > li.active > a {
-  /*background-color: rgba(0, 0, 0, 0.3);*/
-  color: #333;
-}
-.navbar .navbar-main .dropdown-menu > li:last-child > a {
-  border-radius: 0 0 3px 3px;
-}
-.navbar .navbar-main .dropdown-menu > li.divider {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.navbar .navbar-main li.dropdown:hover > ul.dropdown-menu {
-  display: block;
-  -webkit-animation: fadeInUp 300ms;
-  -moz-animation: fadeInUp 300ms;
-  -ms-animation: fadeInUp 300ms;
-  -o-animation: fadeInUp 300ms;
-  animation: fadeInUp 300ms;
-}
-.navbar .navbar-main .sub-menu .dropdown-menu {
-  left: 100%;
-  top: 0;
-  margin-top: 0;
-}
-#mobile-menu .navbar-collapse {
-  max-height: 100%;
 }
 
 /* Instagram */
