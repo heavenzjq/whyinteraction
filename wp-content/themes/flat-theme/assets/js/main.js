@@ -229,7 +229,7 @@ function changePost(){
 			});
 		jQuery('#checkMenu').prop('checked', false);
 		jQuery(".mark_hightlight").removeClass("mark_hightlight");
-		jQuery(selectedBlog).addClass("mark_hightlight");
+		jQuery('a[href="'+selectedBlog+'"]').parent().addClass('mark_hightlight');
 	}
 }
 
