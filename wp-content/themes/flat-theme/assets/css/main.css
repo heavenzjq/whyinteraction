@@ -110,6 +110,14 @@
 
 /* Front Page
 -------------------------------------------------------------- */
+
+/* overwrite small device nav bar */
+@media (max-width: 768px){
+  .navbar-nav>li {
+  float: left;
+  }
+}
+
 #wrapper
 {
     text-align: center;
