@@ -230,7 +230,7 @@ input[type="checkbox"] {
 
 .scrollContainer {
   margin: 0;
-  padding: 0px 15px;
+  /*padding: 0px 15px;*/
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -286,6 +286,10 @@ label.menuButton {
 input[type="checkbox"]:checked ~ .menuContainer {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
+}
+
+li.mark_hightlight {
+  background-color: #f6f6f6;
 }
 
 ul.options {
