@@ -534,6 +534,7 @@ ul.options input[type="checkbox"]:checked ~ label:before {
   margin-top: 5px;
 }
 
-#blogmain article {
+#blogmain .post {
   border-bottom: 1px solid #eee;
 }
+
