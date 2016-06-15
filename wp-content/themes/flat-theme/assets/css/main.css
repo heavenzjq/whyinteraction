@@ -444,6 +444,15 @@ ul.options input[type="checkbox"]:checked ~ label:before {
     padding-: 0px;
     width: 10%;
 }
+
+.col-1220{
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-: 0px;
+    width: 20%;
+}
+
 @media (min-width: 1200px) {
   .col-lg-1210, {
     float: left;
