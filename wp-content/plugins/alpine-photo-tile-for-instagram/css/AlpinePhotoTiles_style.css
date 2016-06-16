@@ -122,6 +122,10 @@ img.AlpinePhotoTiles-img-nocorners{
 .AlpinePhotoTiles-image-div-container{
   /*overflow:hidden;*/
 }
+.AlpinePhotoTiles-image-div-container:hover{
+  /*overflow:hidden;*/
+}
+
 .AlpinePhotoTiles-gallery-container{
   margin:0 0 0 4px;
 }
@@ -258,4 +262,9 @@ img.AlpinePhotoTiles-img-nocorners{
 .AlpinePhotoTiles-pin-it:hover{
   background-color:rgba(34, 25, 25, 0.6);
   box-shadow: 0 0 3px rgba(34, 25, 25, 0.6);
+}
+
+.disabled-link {
+   pointer-events: none;
+   cursor: default;
 }

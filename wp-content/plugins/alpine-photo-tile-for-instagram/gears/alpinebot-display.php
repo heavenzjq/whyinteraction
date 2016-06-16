@@ -972,11 +972,13 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
         $num = $opts[$src.'_photo_number'];
         
           for($i=0;$i<$found ;$i++){
-            if($i < $num){
-              $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,true,$ssl,false,""); // Add image
-            }else{
-              $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,false,$ssl,false,""); // Add image
-            }
+            // if($i < $num){
+            $this->add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,true,$ssl,false,""); // Add image
+            // }else{
+            $this->add_image($i+20,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,false,$ssl,false,""); // Add image
+
+            // $this->add_image($i+20,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,false,$ssl,false,""); // Add image
+            // }
             
 						
             
@@ -1184,10 +1186,14 @@ class PhotoTileForInstagramBot extends PhotoTileForInstagramBotTertiary{
  *  Possible change: place original image as 'alt' and load image as needed
  */
   function add_image($i,$siteurl,$wid,$src,$shadow,$border,$curves,$highlight,$onContextMenu,$isActive,$ssl=false,$pin=false,$css=""){
+    if($i >= 20){
+      $imagesrc = plugins_url('../css/images/ig_'.$i.'.jpg', __FILE__);
+      $i = $i - 20;    
+    }else{
+      $imagesrc = $this->get_photo_info($i,'image_source');
+      if( $ssl ){ $imagesrc = str_replace("http:", "https:", $imagesrc, $temp = 1); }
+    }
     $imagetitle = $this->get_photo_info($i,'image_title');
-    $imagesrc = $this->get_photo_info($i,'image_source');
-    
-    if( $ssl ){ $imagesrc = str_replace("http:", "https:", $imagesrc, $temp = 1); }
     if( $pin ){ $this->add('<div class="AlpinePhotoTiles-pinterest-container" style="position:relative;display:block;" >'); }
     
     $imgclass = 'inActiveImg';

@@ -493,7 +493,7 @@
             newDiv.wrap('<a href="'+perm.href+'" title="'+perm.title+'" alt="'+perm.title+'"  class="AlpinePhotoTiles-link AlpinePhotoTiles-lightbox" target="'+perm.target+'"></a>');
             s(perm).removeClass( 'AlpinePhotoTiles-lightbox' );
           }else{
-            newDiv.wrap('<a href="'+perm.href+'" class="AlpinePhotoTiles-link face front" target="'+perm.target+'"></a>');
+            newDiv.wrap('<a href="'+perm.href+'" class="AlpinePhotoTiles-link face front disabled-link" target="'+perm.target+'"></a>');
           }
         }
         /*if( img.title ){
@@ -507,7 +507,7 @@
         if(options.imageHighlight){
           if(!options.imageBorder){
             newDivContainer.addClass('AlpinePhotoTiles-highlight-div');
-            newDivContainer.addClass('col-1220');
+            newDivContainer.addClass('col-1210');
             newDivContainer.addClass('invisible');
             newDivContainer.addClass('card');
              //newDivContainer.addClass('col-md-3');
@@ -516,21 +516,21 @@
             //newDivContainer.width( newDivContainer.width() * 0.9999);
             newDivContainer.height( newDivContainer.height());
           }
-          newDivContainer.hover(function(){
-            s(this).css({
-              "background": options.highlight
-            });
-          },function(){
-            if( options.imageBorder ){
-              s(this).css({
-                'background-color': '#fff'
-              });
-            }else{
-              s(this).css({
-                'background-color': ''
-              });
-            }
-          });
+          // newDivContainer.hover(function(){
+          //   s(this).css({
+          //     "background": options.highlight
+          //   });
+          // },function(){
+          //   if( options.imageBorder ){
+          //     s(this).css({
+          //       'background-color': '#fff'
+          //     });
+          //   }else{
+          //     s(this).css({
+          //       'background-color': ''
+          //     });
+          //   }
+          // });
         }
         if(options.imageShadow){
           newDivContainer.addClass('AlpinePhotoTiles-shadow-div');

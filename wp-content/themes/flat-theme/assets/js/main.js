@@ -194,9 +194,9 @@ function addNewImageDiv(imageContainer){
     imageContainer.append(newDiv);
 
     if(jQuery('a',imageContainer).hasClass('front')){
-    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face back" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
+    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face back disabled-link" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
     }else{
-    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face front" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
+    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face front disabled-link" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
     }
 }
 
