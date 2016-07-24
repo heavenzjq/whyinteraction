@@ -15,6 +15,9 @@
 </head><!--/head-->
 
 <body <?php body_class() ?>>
+  <div id="loader-wrapper">
+      <div id="loader"></div>
+  </div>
   <?php if(zee_option('zee_theme_layout')=='boxed'){ ?>
     <div id="boxed">
   <?php } ?>

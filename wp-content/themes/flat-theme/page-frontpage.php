@@ -9,6 +9,7 @@
  ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,9 @@
 </head><!--/head-->
 
 <body <?php body_class() ?>>
+  <div id="loader-wrapper">
+      <div id="loader"></div>
+  </div>
   <?php if(zee_option('zee_theme_layout')=='boxed'){ ?>
     <div id="boxed">
   <?php } ?>

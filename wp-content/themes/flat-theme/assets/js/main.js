@@ -26,6 +26,9 @@ jQuery(function($) {
 
 	//portfolio
 	$(window).load(function(){
+		setTimeout(function(){
+	        $('body').addClass('loaded');
+	    }, 3000);
 		$portfolio_selectors = $('.portfolio-filter >li>a');
 		if($portfolio_selectors!='undefined' && $portfolio_selectors.size() > 0){
 			$portfolio = $('.portfolio-items');
