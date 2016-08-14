@@ -28,8 +28,8 @@ jQuery(function($) {
 	$(window).load(function(){
 		setTimeout(function(){
 	        $('body').addClass('loaded');
-	    }, 500);
-		
+	    }, 3000);
+	    
 		$portfolio_selectors = $('.portfolio-filter >li>a');
 		if($portfolio_selectors!='undefined' && $portfolio_selectors.size() > 0){
 			$portfolio = $('.portfolio-items');
@@ -74,18 +74,18 @@ jQuery(function($) {
 		social_tools: false
 	});	
 
-	// ask to fastclick to remove the 300ms tap delay on mobile browsers
-	window.addEventListener( 'load', function() {
-	      FastClick.attach( document.body );
-	}, false);
+	// // ask to fastclick to remove the 300ms tap delay on mobile browsers
+	// window.addEventListener( 'load', function() {
+	//       FastClick.attach( document.body );
+	// }, false);
 
-	// ask to fastclick to remove the 300ms tap delay on mobile browsers
-    // prevent scrolling mechanism to happen on selected elements
-	  var noScrolls = document.querySelectorAll( '.no-scroll' );
-	  var noScrollFn = function( e ) { e.preventDefault(); };
-	  Array.prototype.forEach.call( noScrolls, function(el,i){
-	    el.addEventListener( 'touchstart', noScrollFn );
-	  });
+	// // ask to fastclick to remove the 300ms tap delay on mobile browsers
+ //    // prevent scrolling mechanism to happen on selected elements
+	//   var noScrolls = document.querySelectorAll( '.no-scroll' );
+	//   var noScrollFn = function( e ) { e.preventDefault(); };
+	//   Array.prototype.forEach.call( noScrolls, function(el,i){
+	//     el.addEventListener( 'touchstart', noScrollFn );
+	//   });
 
 
 	// jQuery(window).resize(function(){
@@ -138,7 +138,7 @@ jQuery(function($) {
 
 	//Carousel
 	$('.row-fluid').click(function() {
-	  $('#myCarousel').carousel('next');
+	  $('.carousel',this).carousel('next');
 	});
 });
 
@@ -198,9 +198,9 @@ function addNewImageDiv(imageContainer){
     imageContainer.append(newDiv);
 
     if(jQuery('a',imageContainer).hasClass('front')){
-    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face back disabled-link" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
+    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face back" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
     }else{
-    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face front disabled-link" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
+    	newDiv.wrap('<a href="'+jQuery(inactiveImg).parent().attr("href")+'" class="AlpinePhotoTiles-link face front" target="'+jQuery(inactiveImg).parent().attr("target")+'"></a>');
     }
 }
 
