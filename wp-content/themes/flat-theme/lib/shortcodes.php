@@ -310,15 +310,14 @@ add_shortcode( 'zee_portfolio', function( $atts, $content = null ){
             )); 
             ?> 
           </a>
-          <a href="<?php echo get_permalink( $value->ID ); ?>"><h5><?php echo $value->post_title; ?></h5></a>
-          <p> <?php echo $value->post_excerpt; ?>  </p>
+          <a href="<?php echo get_permalink( $value->ID ); ?>">
           <div class="overlay hidden-xs">
-            <!--<?php 
-            $full_img = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'full');
-            $img_src= $full_img[0];
-            ?>-->
-            <a class="preview btn btn-danger" href="<?php echo get_permalink( $value->ID ); ?>" ><i class="icon-eye-open"></i></a>              
-          </div>        
+            <span>
+                <h1><?php echo $value->post_title; ?></h1>
+              <p> <?php echo $value->post_excerpt; ?> </p> 
+            </span>
+          </div>    
+          </a>    
         </div>
       </li>
       <?php } ?>
